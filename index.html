@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pesse Maloloh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 17px;
+            padding: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+
+        .col-25 {
+            flex: 25%;
+            padding: 0 16px;
+        }
+
+        .col-50 {
+            flex: 50%;
+            padding: 0 16px;
+        }
+
+        .col-75 {
+            flex: 75%;
+            padding: 0 16px;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .btn {
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .btn:hover {
+            background-color: RoyalBlue;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+
+        span.price {
+            float: right;
+            color: grey;
+        }
+
+        #data-container {
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+        }
+
+        @media (max-width: 800px) {
+            .col-25,
+            .col-50,
+            .col-75 {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Input Data Keuangan Dama 2 Blok De</h2>
+<p>Silahkan input data sesuai tabel yang sudah di sediakan dengan beberapa metode pembayaran.</p>
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <f action="/action_page.php">
+
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Tabel Data</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" placeholder="Yurika Gunawan">
+                        <label for="email"><i class="fa fa-home"></i> Nomor Rumah</label>
+                        <input type="text" id="rumah" name="rumah" placeholder="DeNolLima">
+                        <label for="adr"><i class="fa fa-search"></i> Nominal</label>
+                        <input type="text" id="nominal" name="nominal" placeholder="Di isi jika Cash">
+                        <label for="city"><i class="fa fa-bars"></i> Keterangan</label>
+                        <input type="text" id="ket" name="ket" placeholder="Example">
+
+                        <div class="col-60">
+                            <label for="tanggal">Tanggal:</label>
+                            <input type="date" id="tanggal" name="tanggal" required>
+                        </div>
+
+                    </div>
+
+                    <div class="col-50">
+                        <h3>Pembayaran Debit</h3>
+                        <label for="fname">Jenis Kartu yang Diterima</label>
+                        <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <label for="cname">Nama di Kartu Debit</label>
+                        <input type="text" id="kartu" name="kartu" placeholder="Yurika Gunawan">
+                        <label for="ccnum">Kartu Debit</label>
+                        <input type="text" id="nokar" name="nokar" placeholder="1111-2222-3333-4444">
+                        <label for="expmonth">Nominal</label>
+                        <input type="text" id="debit" name="debit" placeholder="Di isi Jika Debit">
+                        <label for="expmonth">Keterangan</label>
+                        <input type="text" id="kett" name="kett" placeholder="Example">
+                        <div class="row">
+                        </div>
+                    </div>
+
+                </div>
+                <label>
+                    <input type="checkbox" checked="checked" name="sameadr"> Saya telah mengisi tabel diatas dengan jujur dan sadar.
+                </label>
+                <label>
+                    <input type="checkbox" checked="checked" name="sameadr"> Saya bersedia bertanggung jawab atas kelalaian pribadi.
+                </label>
+
+                <form id="penduduk-form">
+                    <button type="submit">Tambah Data</button>
+                </form>
+            </form>
+        </div>
+    </div>
+    <div class="col-25">
+        <div class="container">
+            <h4>Jenis Iuran <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>5</b></span></h4>
+            <p><a href="#">KAS RT</a> <span class="price">Rp. 25.000</span></p>
+            <p><a href="#">KAS DAMA</a> <span class="price">Rp. 5000</span></p>
+            <p><a href="#">KEAMANAN</a> <span class="price">Rp. 5000</span></p>
+            <p><a href="#">SOSIAL</a> <span class="price">Rp. 4000</span></p>
+            <p><a href="#">KIFAYAH</a> <span class="price">Rp. 1000</span></p>
+            <hr>
+            <p>Total <span class="price" style="color:black"><b>Rp. 40.000</b></span></p>
+        </div>
+        <button class="btn"><i class="fa fa-download"></i> Download</button>
+    </div>
+</div>
+<div id="data-container">
+    <!-- ... (Container data) ... -->
+</div>
+
+<script>
+    // ... (Script code) ...
+    document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("penduduk-form");
+    const dataContainer = document.getElementById("data-container");
+    const transactions = []; // Array untuk menyimpan data
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Mendapatkan nilai-nilai input
+      const nama = document.getElementById("nama").value;
+      const rumah = document.getElementById("rumah").value;
+      const nominal = document.getElementById("nominal").value;
+      const ket = document.getElementById("ket").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const kartu = document.getElementById("kartu").value;
+      const nokar = document.getElementById("nokar").value;
+      const debit = document.getElementById("debit").value;
+      const kett = document.getElementById("kett").value;
+
+      // Menyimpan data ke dalam array transactions
+      const transaction = {
+        nama: nama,
+        rumah: rumah,
+        nominal: nominal,
+        ket: ket,
+        tanggal: tanggal,
+        kartu: kartu,
+        nokar: nokar,
+        debit: debit,
+        kett: kett
+      };
+      transactions.push(transaction);
+
+      // Membuat elemen baru untuk menampilkan data
+      const dataDiv = document.createElement("div");
+      dataDiv.innerHTML = `<strong>Nama:</strong> ${nama}, <strong>Rumah:</strong> ${rumah}, <strong>Nominal:</strong> ${nominal}, <strong>Keterangan:</strong> ${ket}, <strong>Tanggal:</strong> ${tanggal}, <strong>Kartu Atas Nama:</strong> ${kartu}, <strong>Nomor Kartu:</strong> ${nokar}, <strong>Nominal Debit:</strong> ${debit}, <strong>Ketterangan:</strong> ${kett}`;
+
+      dataContainer.appendChild(dataDiv);
+
+      form.reset();
+    });
+
+    const downloadButton = document.querySelector(".btn");
+
+    downloadButton.addEventListener("click", function() {
+      const csvContent = "data:text/csv;charset=utf-8," + transactionsToCSV(transactions);
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "data_keuangan.csv");
+      document.body.appendChild(link);
+      link.click();
+    });
+
+    function transactionsToCSV(transactions) {
+      const header = "Nama,Rumah,Nominal,Keterangan,Tanggal,Kartu Atas Nama,Nomor Kartu,Nominal Debit,Keterangan\n";
+      const rows = transactions.map(transaction =>
+        `${transaction.nama},${transaction.rumah},${transaction.nominal},${transaction.ket},${transaction.tanggal},${transaction.kartu},${transaction.nokar},${transaction.debit},${transaction.kett}`
+      ).join("\n");
+      return header + rows;
+    }
+  });
+</script>
+
+</body>
+</html>
